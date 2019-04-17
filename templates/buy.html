@@ -1,0 +1,54 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'header.html' %}
+
+
+<center><h1>Buy Shares</h1></center>
+
+<form action="/add_buyshare/" method="post">
+    {% csrf_token %}
+    <div align="center" class="div justify-content-center">
+
+   <div>
+      <input type="number" placeholder="Share Id" name="id">
+   </div>
+    </br>
+    <div>
+      <input type="text" placeholder="Share Name" name="name">
+    </div></br>
+<div>
+            <input type="number"  name="price" placeholder="price">
+    </div>
+  </br>
+  <div>
+      <input type="number" name="quantity" placeholder="quantity">
+  </div>
+  </br>
+    <div>
+  <input type="submit" class="btn btn-primary" value="Buy">
+    </div>  <div>
+        <h1>{{ msg }}</h1>
+    </div>
+    </ul>
+    </div>
+</form>
+
+{% include 'footer.html' %}
+
+
+
+
+
+
+
+
+
+</body>
+</html>

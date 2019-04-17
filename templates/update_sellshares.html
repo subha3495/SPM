@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'header.html' %}
+
+{% if object_list %}
+<table align="center" border="2">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>price</th>
+        <th>quantity</th>
+
+
+
+
+    </tr>
+    {% for x in object_list %}
+    <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.name}}</td>
+        <th>{{ x.price}}</th>
+        <td>{{ x.quantity }}</td>
+
+
+        <td><a href="/updateellshares/?id= {{ x.id  }}">yes</a></td>
+
+    </tr>
+    {% endfor %}
+        {% else %}
+<tr>
+    <td colspan="8">no data available</td>
+</tr>
+{% endif %}
+</table>
+{% include 'footer.html' %}
+</body>
+</html>

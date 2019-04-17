@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'header.html' %}
+<table align="center" border="2" bgcolor="#bdb76b">
+   <form action="/savefb/" method="post">
+       {% csrf_token %}
+
+    <tr>
+        <th>
+            <input type="email" name="email" placeholder="email" required></th></tr>
+    <tr>  <th><input type="text" name="name" placeholder="name" required></th></tr>
+    <tr>   <th>   <textarea name="feedback"></textarea></th></tr>
+
+        <th>
+        <input type="submit" value="Submit">
+        </th>
+    </tr>
+</form>
+</table>
+
+
+</br>
+<center>
+{{ msg }}
+</center>
+
+</body>
+</html>
